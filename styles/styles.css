@@ -239,3 +239,12 @@ div.status.temporary-status {
   opacity: 1;
   font-size: 1.1rem;
 }
+
+#rollResult {
+  min-height: 10vh;
+  width: 80%;
+  margin: auto;
+  border: var(--primary-colour) solid 1px;
+  text-align: center;
+  padding: 4vh;
+  }
