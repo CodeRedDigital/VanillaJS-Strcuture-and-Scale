@@ -41,32 +41,28 @@ let roll = (function (){
   function getRoll (n) {
     if (!dice[n]) return 0
     shuffle(dice[n])
-    console.log(dice[n])
-    console.log(dice[n][0])
-    const result = dice[n][0]
-    console.log(result)
-    return result
+    return dice[n][0]
   }
   function dice2 () {
-    getRoll('d2')
+    return getRoll('d2')
   }
   function dice4 () {
-    getRoll('d4')
+    return getRoll('d4')
   }
   function dice6 () {
-    getRoll('d6')
+    return getRoll('d6')
   }
   function dice8 () {
-    getRoll('d8')
+    return getRoll('d8')
   }
   function dice10 () {
-    getRoll('d10')
+    return getRoll('d10')
   }
   function dice12 () {
-    getRoll('d12')
+    return getRoll('d12')
   }
   function dice20 () {
-    getRoll('d20')
+    return getRoll('d20')
   }
   return {dice2, dice4, dice6, dice8, dice10, dice12, dice20}
 })()
