@@ -51,9 +51,10 @@ let roll = (function (){
     getRoll('d2')
   }
   function dice4 () {
-    shuffle(d4)
-    const result = d4[0]
-    return result
+    // shuffle(d4)
+    // const result = d4[0]
+    // return result
+    getRoll('d4')
   }
   function dice6 () {
     shuffle(d6)
