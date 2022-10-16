@@ -8,18 +8,26 @@ const addTreasure = (event) => {
       silverVal = (parseInt(silver.value) ? parseInt(silver.value) : 0)
       bronzeVal = (parseInt(bronze.value) ? parseInt(silver.value) : 0)
     } else {
-      goldVal = Math.floor(Math.random() * 100)
-      silverVal = Math.floor(Math.random() * 100)
-      bronzeVal = Math.floor(Math.random() * 100)
+      goldVal = TreasureChest.random()
+      silverVal = TreasureChest.random()
+      bronzeVal = TreasureChest.random()
     }
     console.log(`gold: ${goldVal} ${typeof goldVal}, silver: ${silverVal} ${typeof silverVal}, bronze: ${bronzeVal} ${typeof bronzeVal}`)
     const btn = event.target
     if (btn.dataset.button === "cpt") {
       console.log("adding treasure to Captain")
       captain.addGold(goldVal).addSilver(silverVal).addBronze(bronzeVal)
+      cptGoldVal.textContent = captain.gold
+      cptSilverVal.textContent = captain.silver
+      cptBronzeVal.textContent = captain.bronze
+      cptLootVal.textContent = captain.getLoot()
     } else if (btn.dataset.button === "sm") {
       console.log("adding treasure to Shipmate")
       shipMate.addGold(goldVal).addSilver(silverVal).addBronze(bronzeVal)
+      smGoldVal.textContent = shipMate.gold
+      smSilverVal.textContent = shipMate.silver
+      smBronzeVal.textContent = shipMate.bronze
+      smLootVal.textContent = shipMate.getLoot()
     }
     gold.value = ""
     silver.value = ""
@@ -41,6 +49,33 @@ const smBronzeVal = document.querySelector("#smBronzeVal")
 const smLootVal = document.querySelector("#smLootVal")
 buttons.addEventListener("click", addTreasure)
 const TreasureChest = (function () {
+  const amount = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50]
+  /**
+   * Randomly shuffle an array
+   * https://stackoverflow.com/a/2450976/1293256
+   * @param  {Array} array The array to shuffle
+   * @return {Array}       The shuffled array
+   */
+   function shuffle (array) {
+
+    let currentIndex = array.length;
+    let temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+
+  }
   function Constructor (num = 0) {
     this.gold = num
     this.silver = num
@@ -51,15 +86,19 @@ const TreasureChest = (function () {
   }
   Constructor.prototype.addGold = function (num) {
     this.gold = this.gold + num
-    return this.gold
+    return this
   }
   Constructor.prototype.addSilver = function (num) {
     this.silver = this.silver + num
-    return this.silver
+    return this
   }
   Constructor.prototype.addBronze = function (num) {
     this.bronze = this.bronze + num
-    return this.bronze
+    return this
+  }
+  Constructor.random = function () {
+    shuffle(amount)
+    return amount[0]
   }
   return Constructor
 })()
