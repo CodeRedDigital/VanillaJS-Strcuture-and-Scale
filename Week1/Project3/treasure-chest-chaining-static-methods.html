@@ -32,32 +32,38 @@
       </section>
       <section id="buttons">
         <div class="captian">
-          <button class="button" data-button="cptFound">Captain Found Loot</button>
-          <button class="button" data-button="cptDig">Captain Dig for Treasure</button>
+          <button class="button" data-action="found" data-button="cptFound">Captain Found Loot</button>
+          <button class="button" data-action="dig" data-button="cptDig">Captain Dig for Treasure</button>
         </div>
         <div class="shipmate">
-          <button class="button" data-button="smFound">Shipmate Found Loot</button>
-          <button class="button" data-button="smDig">Shipmate Dig for Treasure</button>
+          <button class="button" data-action="found" data-button="smFound">Shipmate Found Loot</button>
+          <button class="button" data-action="dig" data-button="smDig">Shipmate Dig for Treasure</button>
         </div>
       </section>
       <section id="bounties">
-        <ul class="cpt">
-          <li>Gold: <span id="cptGoldVal">0</span></li>
-          <li>Silver: <span id="cptSilverVal">0</span></li>
-          <li>Bronze: <span id="cptBronzeVal">0</span></li>
-          <li>Total: <span id="cptLootVal">0</span></li>
-        </ul>
-        <ul class="sm">
-          <li>Gold: <span id="smGoldVal">0</span></li>
-          <li>Silver: <span id="smSilverVal">0</span></li>
-          <li>Bronze: <span id="smBronzeVal">0</span></li>
-          <li>Total: <span id="smLootVal">0</span></li>
-        </ul>
+        <div class="bounty captain">
+          <h2>Captain Bounty</h2>
+          <ul class="cpt">
+            <li>Gold: <span id="cptGoldVal">0</span></li>
+            <li>Silver: <span id="cptSilverVal">0</span></li>
+            <li>Bronze: <span id="cptBronzeVal">0</span></li>
+            <li>Total: <span id="cptLootVal">0</span></li>
+          </ul>
+        </div>
+        <div class="bounty shipmate">
+          <h2>Shipmate Bounty</h2>
+          <ul class="sm">
+            <li>Gold: <span id="smGoldVal">0</span></li>
+            <li>Silver: <span id="smSilverVal">0</span></li>
+            <li>Bronze: <span id="smBronzeVal">0</span></li>
+            <li>Total: <span id="smLootVal">0</span></li>
+          </ul>
+        </div>
       </section>
     </main>
     <footer>
       <p>This is a workshop/project from <a href="https://twitter.com/ChrisFerdinandi">Chris Ferdinandi's</a> Vanilla JS <a href="https://vanillajsacademy.com/advanced/">Vanilla JS - Structure & Scale</a> course.</p>
     </footer>
-    <script src="./js/treasure-chest.js"></script>
+    <script src="./js/treasure-chest-chaining-static-methods.js"></script>
 	</body>
 </html>

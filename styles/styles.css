@@ -249,6 +249,10 @@ div.status.temporary-status {
   padding: 4vh;
 }
 
-.inputs {
+.inputs, #bounties {
   display: flex;
+}
+#bounties {
+  flex-direction: row;
+  justify-content: space-around;
 }
