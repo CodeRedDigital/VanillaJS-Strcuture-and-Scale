@@ -14,14 +14,12 @@ const addTreasure = (event) => {
     }
     console.log(`gold: ${goldVal} ${typeof goldVal}, silver: ${silverVal} ${typeof silverVal}, bronze: ${bronzeVal} ${typeof bronzeVal}`)
     const btn = event.target
-    if (btn.dataset.button === "cptFound") {
-      console.log("adding Found treasure to Captain")
-    } else if (btn.dataset.button === "cptDig") {
-      console.log("Digging for treasure for Captain")
-    } else if (btn.dataset.button === "smFound") {
-      console.log("adding Found treasure to Shipmate")
-    } else if (btn.dataset.button === "smDig") {
-      console.log("Digging for treasure for Shipmate")
+    if (btn.dataset.button === "cpt") {
+      console.log("adding treasure to Captain")
+      captain.addGold(goldVal).addSilver(silverVal).addBronze(bronzeVal)
+    } else if (btn.dataset.button === "sm") {
+      console.log("adding treasure to Shipmate")
+      shipMate.addGold(goldVal).addSilver(silverVal).addBronze(bronzeVal)
     }
     gold.value = ""
     silver.value = ""
