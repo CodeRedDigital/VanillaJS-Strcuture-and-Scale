@@ -85,15 +85,15 @@ const TreasureChest = (function () {
     }
   }
   Constructor.prototype.addGold = function (num) {
-    this.gold = this.gold + num
+    this.gold += num
     return this
   }
   Constructor.prototype.addSilver = function (num) {
-    this.silver = this.silver + num
+    this.silver += num
     return this
   }
   Constructor.prototype.addBronze = function (num) {
-    this.bronze = this.bronze + num
+    this.bronze += num
     return this
   }
   Constructor.random = function () {
