@@ -247,4 +247,8 @@ div.status.temporary-status {
   border: var(--primary-colour) solid 1px;
   text-align: center;
   padding: 4vh;
-  }
+}
+
+.inputs {
+  display: flex;
+}
