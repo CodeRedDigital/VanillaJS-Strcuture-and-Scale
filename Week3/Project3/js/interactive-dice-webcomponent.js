@@ -19,7 +19,7 @@ class RollDice extends HTMLElement {
   /**
    * create clickHandler
    */
-  clickHandler (event) {
+  #clickHandler (event) {
     event.target.setAttribute("disabled", "");
     const host = event.target.closest('roll-dice')
     const diceSize = (host.hasAttribute('dice-size') ? parseInt(host.getAttribute('dice-size')) : 6)
@@ -37,13 +37,13 @@ class RollDice extends HTMLElement {
     console.log(`roll dice loaded in DOM`, this)
     const btn = this.querySelector('button')
     if (!btn) return
-    btn.addEventListener('click', this.clickHandler)
+    btn.addEventListener('click', this.#clickHandler)
   }
   disconnectedCallback () {
     console.log(`roll dice removed from DOM`, this)
     const btn = this.querySelector('button')
     if (!btn) return
-    btn.removeEventListener('click', this.clickHandler)
+    btn.removeEventListener('click', this.#clickHandler)
   }
   
 }
