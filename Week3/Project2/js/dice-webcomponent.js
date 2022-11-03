@@ -11,7 +11,7 @@ class RollDice extends HTMLElement {
       <p>
         <button>${btnText ? btnText : 'Roll a Dice'}</button>
       </p>
-      <div className="message" aria-live="polite"></div>
+      <div class="message" aria-live="polite"></div>
     `
   }
   connectedCallback () {
